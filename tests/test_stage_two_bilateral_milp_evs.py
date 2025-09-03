@@ -5,12 +5,12 @@ from rec_op_lem_prices.optimization.structures.I_O_stage_2_bilateral_milp_evs im
 )
 
 
-def test_solve_collective_bilateral_milp():
-	# Assert the creation of a correct class
+def test_solve_collective_bilateral_milp_evs():
+	#Assert the creation of a correct class
 	milp = StageTwoMILPBilateral(INPUTS_S2_BILATERAL_EVS)
 	assert isinstance(milp, StageTwoMILPBilateral)
 
-	# Assert the MILP is optimally solved
+	#Assert the MILP is optimally solved
 	milp.solve_milp()
 	assert milp.status == 'Optimal'
 
@@ -26,4 +26,4 @@ def test_solve_collective_bilateral_milp():
 		assert valu == OUTPUTS_S2_BILATERAL_EVS.get(ki), f'{ki}'
 
 if __name__ == '__main__':
-	test_solve_collective_bilateral_milp()
+	test_solve_collective_bilateral_milp_evs()

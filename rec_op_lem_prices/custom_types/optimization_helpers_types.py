@@ -1,40 +1,34 @@
-from typing import (
-	TypeAlias,
-	TypedDict,
-	Union
-)
-
-
 # general_helpers.py
-ForecastsList: TypeAlias = list[dict]
+from typing import Dict, List, Union
+try:
+    from typing_extensions import TypeAlias
+except ImportError:
+    # fallback se typing_extensions não estiver instalado
+    TypeAlias = object
+
+ForecastsList = List[Dict]  # type: TypeAlias
 
 
-class SinglePeerMeasuresDict(TypedDict):
-	peer_id: str
-	measure: float
+class SinglePeerMeasuresDict(Dict):
+    peer_id: str
+    measure: float
 
 
-class SingleUpacMeasuresDict(TypedDict):
-	upac_id: str
-	measure: float
+class SingleUpacMeasuresDict(Dict):
+    upac_id: str
+    measure: float
 
 
-class PeerMeasuresDict(TypedDict):
-	peer_measures: list[SinglePeerMeasuresDict]
+class PeerMeasuresDict(Dict):
+    peer_measures: List[SinglePeerMeasuresDict]
 
 
-class UpacMeasuresDict(TypedDict):
-	upac_measures: list[SingleUpacMeasuresDict]
+class UpacMeasuresDict(Dict):
+    upac_measures: List[SingleUpacMeasuresDict]
 
 
-InputDatadict: TypeAlias = Union[PeerMeasuresDict, UpacMeasuresDict]
+InputDatadict = Union[PeerMeasuresDict, UpacMeasuresDict]  # type: TypeAlias
 
 # milp_helpers.py
-MetersDict: TypeAlias = dict[
-	str, dict[
-		str, list[float]
-	]
-]
-MetersParamDict: TypeAlias = dict[
-	str, list[float]
-]
+MetersDict = Dict[str, Dict[str, List[float]]]  # type: TypeAlias
+MetersParamDict = Dict[str, List[float]]        # type: TypeAlias
