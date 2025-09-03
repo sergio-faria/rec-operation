@@ -9,7 +9,7 @@ setup(
 	install_requires=[
 		'joblib~=1.3.2',
 		'loguru~=0.7.2',
-		'matplotlib~=3.8.0',
+		'matplotlib~=3.7.0',
 		'numpy~=1.26.1',
 		'pandas~=2.1.2',
 		'pulp~=2.7.0',
