@@ -14,7 +14,7 @@ setup(
     'pandas~=1.5.0',              # CORRIGIDO (de 2.1.2)
     'pulp~=2.7.0',
     'scikit-learn~=1.3.0',        # CORRIGIDO (de 1.4.1.post1)
-    'setuptools~=80.9.0',           # CORRIGIDO (de 70.0.0)
+    'setuptools~=75.3.2',           # CORRIGIDO (de 70.0.0)
     'typing-extensions~=4.10.0'
 ],
 	setup_requires=['pytest_runner==6.0.0'],
